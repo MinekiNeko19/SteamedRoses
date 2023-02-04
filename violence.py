@@ -7,7 +7,10 @@ canvasHeight = 864# full width of canvas in pixels
 
 win=tk.Tk()
 win.geometry("1600x800")
-p1=Canvas(win, width=800, height=800, bg="#FF5733")
-p1.pack(side="left")
-#p2=Canvas(win, width=800, height=500)
+
+cut=Canvas(win, width=1600, height=800, bg="#33FF6E")
+cut.pack()
+
+cut.create_line(800,0,800,800, width=4)
+
 win.mainloop()
