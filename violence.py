@@ -42,7 +42,34 @@ def left(event):
 win.bind("<w>" , up)  
 win.bind("<a>" , left)  
 win.bind("<d>" , right)  
-print(p1.y)
+
+p2=pl.player(can,1200,800, "#6431D3")
+#p1.draw()
+def up(event):
+  while (p2.y-p2.dy<=floor):
+    p2.y-=p2.dy
+    can.move(p2.body,0,-p2.dy)
+    time.sleep(0.02)
+    p2.dy-=grav 
+    can.update() 
+    if(p2.y==floor):
+      break
+  p2.dy=15
+  #print(p1.y) 
+def right(event):
+  if p2.x<1580:
+    p2.x+=p2.dx
+    can.move(p2.body,p2.dx,0)
+  
+def left(event):
+  if p2.x>820:
+    p2.x-=p2.dx
+    can.move(p2.body,-p2.dx,0)
+  
+win.bind("<Up>" , up)  
+win.bind("<Left>" , left)  
+win.bind("<Right>" , right)  
+
 can.pack()
 
 win.mainloop()
