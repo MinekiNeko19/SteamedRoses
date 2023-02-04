@@ -10,8 +10,8 @@ class player:
     self.y=y
     self.color=color
     self.canv=canv
-    self.dy=10
-    self.dx=10
+    self.dy=15
+    self.dx=5
     self.body=self.canv.create_oval(self.x-10,self.y-20,self.x+10,self.y,width=0,fill=self.color)
     
   def draw(self):
